@@ -16,7 +16,10 @@ class ViewController: UIViewController {
         let path = Bundle.main.path(forResource: "collection-resource", ofType: ".json")
         if let path = path {
             let url = URL(fileURLWithPath: path)
-            let content = try? Data(content)
+            let content = try? Data(contentsOf: url, options: .alwaysMapped)
+            let collections = try? JSONDecoder().decode([Collections].self, from: content!)
+            guard let Collections = collections else {return}
+            print(Collections)
         }
     }
 
