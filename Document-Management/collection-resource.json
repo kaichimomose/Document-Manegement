@@ -1,0 +1,18 @@
+[
+  {
+  "collection_name": "Forests",
+  "zipped_images_url": "https://s3-us-west-2.amazonaws.com/mob3/forest.zip"
+  },
+  {
+  "collection_name": "Lions",
+  "zipped_images_url": "https://s3-us-west-2.amazonaws.com/mob3/lion.zip"
+  },
+  {
+  "collection_name": "Swimming",
+  "zipped_images_url": "https://s3-us-west-2.amazonaws.com/mob3/swimming.zip"
+  },
+  {
+  "collection_name": "Health & Food",
+  "zipped_images_url": "https://s3-us-west-2.amazonaws.com/mob3/heath+%26+food.zip"
+  }
+]

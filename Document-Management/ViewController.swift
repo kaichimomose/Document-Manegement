@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let path = Bundle.main.path(forResource: "collection-resource", ofType: ".json")
+        if let path = path {
+            let url = URL(fileURLWithPath: path)
+            let content = try? Data(content)
+        }
     }
 
     override func didReceiveMemoryWarning() {
