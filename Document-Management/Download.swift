@@ -22,14 +22,14 @@ class Downloader {
                 }
                 
                 do {
-//                    try FileManager.default.copyItem(at: tempLocalUrl, to: localUrl.appendingPathComponent(url.lastPathComponent))
                     Zip.addCustomFileExtension("tmp")
-//                    try Zip.unzipFile(tempLocalUrl, destination: localUrl, overwrite: true, password: nil, progress: { (progress) -> () in
-//                        print(progress)
-//                    }) // Unzip
-                    let unzipDirectory = try Zip.quickUnzipFile(tempLocalUrl)
-                    try FileManager.default.copyItem(at: unzipDirectory, to: localUrl.appendingPathComponent(unzipDirectory.lastPathComponent))
-                    completion(localUrl.appendingPathComponent(unzipDirectory.lastPathComponent))
+                    try Zip.unzipFile(tempLocalUrl, destination: localUrl, overwrite: true, password: nil, progress: { (progress) -> () in
+                        print(progress)
+                    }) // Unzip
+//                    let unzipDirectory = try Zip.quickUnzipFile(tempLocalUrl)
+                    
+//                    try FileManager.default.copyItem(at: unzipDirectory, to: localUrl.appendingPathComponent(unzipDirectory.lastPathComponent))
+                    completion(localUrl)
                 } catch (let writeError){
                     print("Error wirting file \(localUrl): \(writeError)")
                 }
