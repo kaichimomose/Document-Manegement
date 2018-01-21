@@ -11,7 +11,7 @@ import Foundation
 struct Collections {
     let collectionName: String
     let zippedImagesUrl: URL
-    let unzippedImagesUrl: URL?
+    var unzippedImagesUrl: URL?
 }
 
 extension Collections: Decodable{

@@ -14,6 +14,10 @@
 		BFBB302520127FFE00A3F617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBB302320127FFE00A3F617 /* LaunchScreen.storyboard */; };
 		BFBB302F201280A600A3F617 /* collection-resource.json in Resources */ = {isa = PBXBuildFile; fileRef = BFBB302E201280A600A3F617 /* collection-resource.json */; };
 		BFBB30312012810700A3F617 /* collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB30302012810700A3F617 /* collections.swift */; };
+		BFBB30342013F02200A3F617 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBB30332013F02200A3F617 /* Zip.framework */; };
+		BFBB30372014268300A3F617 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB30362014268300A3F617 /* Download.swift */; };
+		BFBB303A20143A6800A3F617 /* CollectionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB303820143A6800A3F617 /* CollectionsCell.swift */; };
+		BFBB303B20143A6800A3F617 /* CollectionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBB303920143A6800A3F617 /* CollectionsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		BFBB302620127FFE00A3F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBB302E201280A600A3F617 /* collection-resource.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "collection-resource.json"; sourceTree = "<group>"; };
 		BFBB30302012810700A3F617 /* collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collections.swift; sourceTree = "<group>"; };
+		BFBB30332013F02200A3F617 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
+		BFBB30362014268300A3F617 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		BFBB303820143A6800A3F617 /* CollectionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsCell.swift; sourceTree = "<group>"; };
+		BFBB303920143A6800A3F617 /* CollectionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBB30342013F02200A3F617 /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			children = (
 				BFBB301920127FFE00A3F617 /* Document-Management */,
 				BFBB301820127FFE00A3F617 /* Products */,
+				BFBB30322013F02200A3F617 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,13 +71,24 @@
 				BFBB302E201280A600A3F617 /* collection-resource.json */,
 				BFBB30302012810700A3F617 /* collections.swift */,
 				BFBB301A20127FFE00A3F617 /* AppDelegate.swift */,
+				BFBB30362014268300A3F617 /* Download.swift */,
 				BFBB301C20127FFE00A3F617 /* ViewController.swift */,
+				BFBB303820143A6800A3F617 /* CollectionsCell.swift */,
+				BFBB303920143A6800A3F617 /* CollectionsCell.xib */,
 				BFBB301E20127FFE00A3F617 /* Main.storyboard */,
 				BFBB302120127FFE00A3F617 /* Assets.xcassets */,
 				BFBB302320127FFE00A3F617 /* LaunchScreen.storyboard */,
 				BFBB302620127FFE00A3F617 /* Info.plist */,
 			);
 			path = "Document-Management";
+			sourceTree = "<group>";
+		};
+		BFBB30322013F02200A3F617 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFBB30332013F02200A3F617 /* Zip.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +101,7 @@
 				BFBB301320127FFE00A3F617 /* Sources */,
 				BFBB301420127FFE00A3F617 /* Frameworks */,
 				BFBB301520127FFE00A3F617 /* Resources */,
+				BFBB30352013F03400A3F617 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBB303B20143A6800A3F617 /* CollectionsCell.xib in Resources */,
 				BFBB302520127FFE00A3F617 /* LaunchScreen.storyboard in Resources */,
 				BFBB302F201280A600A3F617 /* collection-resource.json in Resources */,
 				BFBB302220127FFE00A3F617 /* Assets.xcassets in Resources */,
@@ -138,13 +161,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BFBB30352013F03400A3F617 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFBB301320127FFE00A3F617 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BFBB301D20127FFE00A3F617 /* ViewController.swift in Sources */,
+				BFBB30372014268300A3F617 /* Download.swift in Sources */,
 				BFBB30312012810700A3F617 /* collections.swift in Sources */,
+				BFBB303A20143A6800A3F617 /* CollectionsCell.swift in Sources */,
 				BFBB301B20127FFE00A3F617 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +327,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGUE68EN3T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Document-Management/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.momose-kaichi.Document-Management";
@@ -299,6 +346,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGUE68EN3T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Document-Management/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.momose-kaichi.Document-Management";
