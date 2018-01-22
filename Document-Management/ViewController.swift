@@ -75,6 +75,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "CollectionsCell", for: indexPath) as! CollectionsCell
         let row = indexPath.row
+        //set
+        cell.progressIndicator.hidesWhenStopped = true
+        
         cell.collectionNameLabel.text = collections[row].collectionName
         
 //        func contentsOfDirectoryAtPath(path: String) -> [String]? {
@@ -88,19 +91,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
 //        let allContents = contentsOfDirectoryAtPath(path: searchPath + "/lion")
 //        print(allContents)
-        
-        do {
-            if let url = collections[row].unzippedImagesUrl {
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
-            let jpegFiles = directoryContents.filter{ $0.pathExtension == "jpeg" }
-            print("jpeg urls:",jpegFiles)
-            }
-        } catch {
-            print("\(error)")
-        }
-//        print(collections[row].unzippedImagesUrl ?? "")
-        
+
         cell.thumbnailImage.image = loadImage(fileURL: collections[row].unzippedImagesUrl?.appendingPathComponent("_preview.png"))
+        if cell.thumbnailImage.image != nil {
+            cell.progressIndicator.stopAnimating()
+        } else {
+            cell.progressIndicator.startAnimating()
+        }
         
         return cell
     }
