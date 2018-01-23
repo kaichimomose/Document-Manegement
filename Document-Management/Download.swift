@@ -9,8 +9,15 @@
 import Foundation
 import Zip
 
+enum PhotoResult {
+    case downloading(Double)
+    case unzipping(Double)
+    case error(String)
+    case done(URL)
+}
+
 class Downloader {
-    class func load(url: URL, to localUrl: URL, completion: @escaping (URL) -> ()) {
+    class func load(from url: URL, to localUrl: URL, completion: @escaping (PhotoResult) -> ()) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
         let request = URLRequest(url: url)
@@ -24,12 +31,10 @@ class Downloader {
                 do {
                     Zip.addCustomFileExtension("tmp")
                     try Zip.unzipFile(tempLocalUrl, destination: localUrl, overwrite: true, password: nil, progress: { (progress) -> () in
-                        print(progress)
+                        completion(PhotoResult.unzipping(progress))
                     }) // Unzip
-//                    let unzipDirectory = try Zip.quickUnzipFile(tempLocalUrl)
-                    
-//                    try FileManager.default.copyItem(at: unzipDirectory, to: localUrl.appendingPathComponent(unzipDirectory.lastPathComponent))
-                    completion(localUrl)
+
+                    completion(PhotoResult.done(localUrl))
                 } catch (let writeError){
                     print("Error wirting file \(localUrl): \(writeError)")
                 }

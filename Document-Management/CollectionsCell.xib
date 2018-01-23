@@ -40,14 +40,20 @@
                             <constraint firstAttribute="height" constant="40" id="gql-KU-7lM"/>
                         </constraints>
                     </activityIndicatorView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vU6-VB-zHq">
+                        <rect key="frame" x="0.0" y="-0.5" width="320" height="2"/>
+                    </progressView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="oGf-UY-Dn4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2eW-RO-tlF"/>
                     <constraint firstItem="oGf-UY-Dn4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="90i-VU-Nu5"/>
+                    <constraint firstItem="vU6-VB-zHq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ALY-ol-eTo"/>
                     <constraint firstAttribute="bottom" secondItem="oGf-UY-Dn4" secondAttribute="bottom" id="Pf0-aq-g8q"/>
                     <constraint firstItem="en9-cC-fAU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U7t-jw-WQH"/>
                     <constraint firstItem="en9-cC-fAU" firstAttribute="centerX" secondItem="oGf-UY-Dn4" secondAttribute="centerX" id="aG3-cI-QHC"/>
+                    <constraint firstItem="vU6-VB-zHq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="elR-2n-58U"/>
                     <constraint firstItem="VfD-Oj-CNR" firstAttribute="leading" secondItem="oGf-UY-Dn4" secondAttribute="trailing" constant="17.5" id="fdF-eX-mqH"/>
+                    <constraint firstAttribute="trailing" secondItem="vU6-VB-zHq" secondAttribute="trailing" id="gyj-0t-fkh"/>
                     <constraint firstItem="VfD-Oj-CNR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yJj-Kw-oWp"/>
                 </constraints>
             </tableViewCellContentView>
@@ -56,6 +62,7 @@
                 <outlet property="collectionNameLabel" destination="VfD-Oj-CNR" id="qgs-H6-o1i"/>
                 <outlet property="progressIndicator" destination="en9-cC-fAU" id="JMS-uD-rYN"/>
                 <outlet property="thumbnailImage" destination="oGf-UY-Dn4" id="atl-ay-9wc"/>
+                <outlet property="unzippingProgressView" destination="vU6-VB-zHq" id="vLm-cB-1GT"/>
             </connections>
             <point key="canvasLocation" x="36" y="82"/>
         </tableViewCell>

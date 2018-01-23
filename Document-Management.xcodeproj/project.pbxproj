@@ -21,6 +21,7 @@
 		BFBB303F20152D3400A3F617 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB303E20152D3400A3F617 /* ImageCollectionViewController.swift */; };
 		BFBB304220152FFF00A3F617 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB304020152FFF00A3F617 /* ImageCell.swift */; };
 		BFBB304320152FFF00A3F617 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBB304120152FFF00A3F617 /* ImageCell.xib */; };
+		BFDF22BA2016AB4100AE7471 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF22B92016AB4100AE7471 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BFBB303E20152D3400A3F617 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		BFBB304020152FFF00A3F617 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		BFBB304120152FFF00A3F617 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		BFDF22B92016AB4100AE7471 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				BFBB30302012810700A3F617 /* collections.swift */,
 				BFBB301A20127FFE00A3F617 /* AppDelegate.swift */,
 				BFBB30362014268300A3F617 /* Download.swift */,
+				BFDF22B92016AB4100AE7471 /* Networking.swift */,
 				BFBB301C20127FFE00A3F617 /* ViewController.swift */,
 				BFBB303820143A6800A3F617 /* CollectionsCell.swift */,
 				BFBB303E20152D3400A3F617 /* ImageCollectionViewController.swift */,
@@ -197,6 +200,7 @@
 				BFBB303F20152D3400A3F617 /* ImageCollectionViewController.swift in Sources */,
 				BFBB301D20127FFE00A3F617 /* ViewController.swift in Sources */,
 				BFBB30372014268300A3F617 /* Download.swift in Sources */,
+				BFDF22BA2016AB4100AE7471 /* Networking.swift in Sources */,
 				BFBB30312012810700A3F617 /* collections.swift in Sources */,
 				BFBB303A20143A6800A3F617 /* CollectionsCell.swift in Sources */,
 				BFBB304220152FFF00A3F617 /* ImageCell.swift in Sources */,

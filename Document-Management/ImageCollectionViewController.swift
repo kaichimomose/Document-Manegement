@@ -18,25 +18,26 @@ class ImageCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //collectionView setup
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
         collectionView.register(UINib(nibName: "ImageCell", bundle: .main), forCellWithReuseIdentifier: "ImageCell")
         
+        
+        guard let imageUrls = getImageUrls(url: self.unzippedImageUrl) else {return}
+        self.imageUrls = imageUrls
+    }
+
+    private func getImageUrls(url: URL?) -> [URL]? {
         do {
-            if let url = self.unzippedImageUrl {
-                let directoryContents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
-                let jpegFiles = directoryContents.filter{ $0.pathExtension == "jpg" || $0.pathExtension == "jpeg"}
-                self.imageUrls = jpegFiles
-            }
+            guard let url = url else {return nil}
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
+            let jpegFiles = directoryContents.filter{ $0.pathExtension == "jpg" || $0.pathExtension == "jpeg"}
+            return jpegFiles
         } catch {
             print("\(error)")
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        return nil
     }
     
     private func loadImage(fileURL: URL?) -> UIImage? {

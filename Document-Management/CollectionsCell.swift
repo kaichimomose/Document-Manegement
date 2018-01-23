@@ -13,5 +13,6 @@ class CollectionsCell: UITableViewCell {
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var unzippingProgressView: UIProgressView!
     
 }
