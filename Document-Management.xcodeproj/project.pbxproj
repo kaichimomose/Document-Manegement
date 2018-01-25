@@ -22,6 +22,7 @@
 		BFBB304220152FFF00A3F617 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB304020152FFF00A3F617 /* ImageCell.swift */; };
 		BFBB304320152FFF00A3F617 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBB304120152FFF00A3F617 /* ImageCell.xib */; };
 		BFDF22BA2016AB4100AE7471 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF22B92016AB4100AE7471 /* Networking.swift */; };
+		BFDF22BC201941CD00AE7471 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF22BB201941CD00AE7471 /* ShowImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		BFBB304020152FFF00A3F617 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		BFBB304120152FFF00A3F617 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		BFDF22B92016AB4100AE7471 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		BFDF22BB201941CD00AE7471 /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				BFBB303820143A6800A3F617 /* CollectionsCell.swift */,
 				BFBB303E20152D3400A3F617 /* ImageCollectionViewController.swift */,
 				BFBB304020152FFF00A3F617 /* ImageCell.swift */,
+				BFDF22BB201941CD00AE7471 /* ShowImageViewController.swift */,
 				BFBB304120152FFF00A3F617 /* ImageCell.xib */,
 				BFBB303920143A6800A3F617 /* CollectionsCell.xib */,
 				BFBB301E20127FFE00A3F617 /* Main.storyboard */,
@@ -201,6 +204,7 @@
 				BFBB301D20127FFE00A3F617 /* ViewController.swift in Sources */,
 				BFBB30372014268300A3F617 /* Download.swift in Sources */,
 				BFDF22BA2016AB4100AE7471 /* Networking.swift in Sources */,
+				BFDF22BC201941CD00AE7471 /* ShowImageViewController.swift in Sources */,
 				BFBB30312012810700A3F617 /* collections.swift in Sources */,
 				BFBB303A20143A6800A3F617 /* CollectionsCell.swift in Sources */,
 				BFBB304220152FFF00A3F617 /* ImageCell.swift in Sources */,

@@ -29,16 +29,29 @@ class ViewController: UIViewController {
         
         
         //gets collections models from json file
-        let path = Bundle.main.path(forResource: "collection-resource", ofType: ".json")
-        let collections = decoding(path: path)
-        guard let listOfCollections = collections else {return}
-        self.collections = listOfCollections
+//        let path = Bundle.main.path(forResource: "collection-resource", ofType: ".json")
+//        let collections = decoding(path: path)
+//        guard let listOfCollections = collections else {return}
+//        self.collections = listOfCollections
         
+        //gets collections models from database
+        Networking().fetch { (result) in
+            guard let collections = result as? [Collections] else {return}
+            
+            self.collections = collections
+            
+            //downloads zipped file and unzipps it
+            self.downloadAndUnzippfiles()
+        }
+            
         
+    }
+    
+    private func downloadAndUnzippfiles() {
         //file maneger setting
         let fileManeger = FileManager.default
         
-        //file url to save unzipped file
+        //file url where saving unzipped file
         let fileUrl = try! fileManeger.url(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
         
         //index of list of collections
@@ -51,37 +64,37 @@ class ViewController: UIViewController {
             Downloader.load(from: collection.zippedImagesUrl, to: fileUrl, completion: {(result) in
                 switch result {
                     
-                    //when result is filepath of unzipped file
-                    case let .done(filePath):
-                        DispatchQueue.main.async {
-                            
-                            //gets an unzipped file name from a zipped image url
-                            let filename = self.collections[index].zippedImagesUrl.deletingPathExtension().lastPathComponent.replacingOccurrences(of: "+", with: " ")
-                            
-                            //saves an unzipped image url
-                            self.collections[index].unzippedImagesUrl = filePath.appendingPathComponent(filename)
-                            
-                            //incriment number of index
-                            index += 1
-                            
-                            //updates tableview cells
-                            self.tableview.reloadData()
-                        }
-                    
-                    //when result is unzipping progress...
-                    case let .unzipping(progress):
+                //when result is filepath of unzipped file
+                case let .done(filePath):
+                    DispatchQueue.main.async {
                         
-                        //update progress
-                        self.collections[index].unzippingProgress = progress
+                        //gets an unzipped file name from a zipped image url
+                        let filename = self.collections[index].zippedImagesUrl.deletingPathExtension().lastPathComponent.replacingOccurrences(of: "+", with: " ")
+                        
+                        //saves an unzipped image url
+                        self.collections[index].unzippedImagesUrl = filePath.appendingPathComponent(filename)
+                        
+                        //incriment number of index
+                        index += 1
+                        
+                        //updates tableview cells
+                        self.tableview.reloadData()
+                    }
                     
-                    case let .downloading(progress):
-                        print(progress)
+                //when result is unzipping progress...
+                case let .unzipping(progress):
                     
-                    case let .error(error):
-                        print(error)
+                    //update progress
+                    self.collections[index].unzippingProgress = progress
+                    
+                case let .downloading(progress):
+                    print(progress)
+                    
+                case let .error(error):
+                    print(error)
                 }
             })
-        
+            
         }
     }
     
